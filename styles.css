@@ -72,7 +72,7 @@ img {
 }
 
 .product-title {
-  color: var(--color-primary-dark);
+  color: var(--color-neutral-darker);
   font-family: "Fraunces";
   font-size: var(--fs-xl);
   font-weight: 700;
