@@ -1,0 +1,134 @@
+@import url(https://fonts.google.com/specimen/Montserrat);
+@import url(https://fonts.google.com/specimen/Fraunces);
+
+:root {
+  --color-primary: hsl(30, 38%, 92%);
+  --color-primary-dark: hsl(158, 36%, 37%);
+  --color-primary-darker: hsl(158, 36%, 17%);
+
+  --color-neutral-light: #fff;
+  --color-neutral-dark: hsl(228, 12%, 48%);
+  --color-neutral-darker: hsl(212, 21%, 14%);
+
+  --fs-s: 10px;
+  --fs-base: 14px;
+  --fs-l: 24px;
+  --fs-xl: 36px;
+
+  --spacing-xs: 0.35rem;
+  --spacing-s: 0.75rem;
+  --spacing-base: 1rem;
+  --spacing-l: 2rem;
+  --spacing-xl: 3rem;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
+}
+
+body {
+  background-color: var(--color-primary);
+}
+
+main {
+  height: 100%;
+  display: grid;
+  place-content: center;
+  padding: 0 var(--spacing-base);
+}
+
+.wrapper {
+  color: var(--color-neutral-dark);
+  font-family: "Montserrat";
+  background-color: var(--color-neutral-light);
+  border-radius: var(--spacing-s);
+
+}
+
+img {
+  max-width: 400px;
+
+  width: 100%;
+  border-radius: var(--spacing-s) var(--spacing-s) 0 0;
+}
+
+.wrapper section {
+  max-width: 400px;
+  padding: var(--spacing-base);
+
+  & * + * {
+    margin-top: var(--spacing-base);
+  }
+}
+
+.product-type {
+  letter-spacing: var(--spacing-xs);
+}
+
+.product-title {
+  color: var(--color-primary-dark);
+  font-family: "Fraunces";
+  font-size: var(--fs-xl);
+  font-weight: 700;
+}
+
+.product-description {
+  line-height: 1.4;
+}
+
+.product-price {
+  color: var(--color-primary-dark);
+  font-size: var(--fs-xl);
+  font-family: "Fraunces";
+  font-weight: 700;
+}
+
+.product-price::after {
+  color: var(--color-neutral-dark);
+  content: "$169.99";
+  font-size: var(--fs-base);
+  text-decoration: line-through;
+
+  position: relative;
+  bottom: 5px;
+  left: 10px;
+}
+
+button {
+  width: 100%;
+  color: var(--color-primary);
+  background-color: var(--color-primary-dark);
+  padding: var(--spacing-s) 0;
+  border-radius: var(--spacing-xs);
+  border: none;
+
+  &:active {
+    background-color: var(--color-primary-darker);
+  }
+}
+
+@media (min-width: 600px) {
+  .wrapper {
+    display: flex;
+    max-width: 800px;
+  }
+
+  .wrapper section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: var(--spacing-base) var(--spacing-l);
+  }
+
+  img {
+    height: 100%;
+    border-radius: var(--spacing-s) 0 0 var(--spacing-s);
+  }
+
+}
